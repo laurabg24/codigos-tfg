@@ -1,2 +1,11 @@
-# codigos-tfg
+# explicación de los códigos
+hay 3 códigos que han sido utilizados durante este trabajo. en este documento se explicará el uso de cada uno de ellos:
 
+1) OCT_phantoms_ale_v6.m -> es el código original creado por Maria Miażdżyk. en la variable inputFolder se pone el directorio donde se han guardado las imágenes .bmp y en outputExcel se le pone el nombre al excel donde se guardarán todos los datos. en halfWidth y roiHeight se cambian las dimensiones de la roi. en el primer bucle for se pone el número de imágenes que se van a analizar (o todas). una vez se ejecuta el código, aparece un pop up que te indica marcar con un clic la zona donde se va a marcar la roi (el clic delimita el lado superior de la roi, importante para dibujar correctamente la roi). una vez ha terminado de correr el código, se genera el excel con el nombre puesto en la variable outputExcel y aparecen muchas métricas, de las cuales cinco han sido utilizadas para este trabajo; las demás no han sido tenidas en cuenta. este código no ha sido utilizado para este trabajo, pero es necesario comentarlo para entender sus dos variaciones que sí han sido utilizadas.
+
+2) OCT_phantoms_ale_v6_rayleigh_nuevo.m -> es exactamente igual que el código original pero la función que calcula la métrica KS Rayleigh ha sido cambiada por una versión actualizada. esta función nueva ha sido programada por Sara Ferrer.
+
+3) OCT_phantoms_ale_v6_moving_ROI_wo_interphase_rayleigh_nuevo.m -> este código funciona igual que el primer código hasta la ejecución de este. al ejecutar, aparece el mismo pop up pero esta vez hay que clicar tres veces la imagen: el primer clic se pone en la superficie del phantom, el segundo en la interfase y el tercero indica la última posición que analiza la roi. al terminar de correr el código, se genera el mismo excel que antes pero con muchos puntos analizados, ya que la roi va bajando y se guarda cada métrica en cada posición. la función que calcula la métrica KS Rayleigh también ha sido cambiada en este código por la de Sara Ferrer.
+
+
+importante!!! las imágenes se pasaban dos veces por los códigos 2) y 3), una con la normalización RMS comentada y otra sin comentar. en la primera función programada llamada ROI se encuentra esta línea que calcula la normalización. puede ser que en ambos códigos esté esta normalización comentada, mejor comprobar si lo está o no.
